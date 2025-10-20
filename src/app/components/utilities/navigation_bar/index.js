@@ -1,19 +1,48 @@
+"use client";
+
 import Link from "next/link";
 
 const Navbar = () => {
   return (
-    <header className="bg-indigo-500 shadow-lg w-full">
-      <div className="flex flex-col sm:flex-row justify-between items-center p-4 max-w-7xl mx-auto gap-4 sm:gap-0 px-4 sm:px-6 lg:px-8">
+    <header
+      className="bg-indigo-500 shadow-lg w-full"
+      style={{ display: "flex" }}
+    >
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          padding: "1rem",
+          maxWidth: "80rem",
+          marginLeft: "auto",
+          marginRight: "auto",
+          width: "100%",
+          paddingLeft: "1.5rem",
+          paddingRight: "1.5rem",
+        }}
+      >
         <Link
           href="/"
           className="font-bold text-white text-xl hover:text-indigo-200 transition-colors"
         >
           ANIME LIST
         </Link>
-        <div className="relative w-full sm:w-auto">
+        <div className="relative">
           <input
             placeholder="Cari Anime..."
-            className="bg-white rounded-full px-6 py-3 my-2 w-full sm:w-[300px] focus:outline-none focus:ring-2 focus:ring-indigo-300 transition-all shadow-sm"
+            style={{
+              backgroundColor: "white",
+              borderRadius: "9999px",
+              padding: "0.5rem 1.5rem",
+              width: "300px",
+              outline: "none",
+              boxShadow: "0 1px 3px rgba(0, 0, 0, 0.1)",
+            }}
+            onFocus={(e) => (e.target.style.boxShadow = "0 0 0 2px #e0e7ff")}
+            onBlur={(e) =>
+              (e.target.style.boxShadow = "0 1px 3px rgba(0, 0, 0, 0.1)")
+            }
           />
         </div>
       </div>
